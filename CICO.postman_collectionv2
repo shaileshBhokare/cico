@@ -1,0 +1,728 @@
+{
+	"info": {
+		"_postman_id": "d87e8a2c-8309-47f6-bd67-6f77a6c3566f",
+		"name": "CICO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login Using email password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"abc@cico.com\",\n\t\"password\":\"abc\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "34.244.117.88:5000/v1/user/authenticate",
+					"host": [
+						"34",
+						"244",
+						"117",
+						"88"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"user",
+						"authenticate"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login Using email password (success)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"abc@cico.com\",\n\t\"password\":\"abc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/user/authenticate",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"user",
+								"authenticate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "544"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"220-JsXPITrbMz8xyBnC/4n+8WUUlHY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Jan 2020 00:56:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVlMzFkOGZiODE3NjI2MGJjY2U3MTNmNiIsInVzZXJfdHlwZSI6InVzZXIiLCJuYW1lIjoiYWJjIiwiZW1haWwiOiJhYmNAY2ljby5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRkTzYwYlQ3RmNJSERMcmdoTnZISzJPMzY0TldBQmRONm9wSmlnMHRoM0dVYzVJWm16SzFBNiIsIl9fdiI6MH0sImlhdCI6MTU4MDM0NTgxOX0.8yG7kmQfvTXVt4m_pXDjvC9jYIJt3CRX4_mFJUZnwMw\",\n    \"data\": {\n        \"_id\": \"5e31d8fb8176260bcce713f6\",\n        \"user_type\": \"user\",\n        \"name\": \"abc\",\n        \"email\": \"abc@cico.com\",\n        \"password\": \"$2b$10$dO60bT7FcIHDLrghNvHK2O364NWABdN6opJig0th3GUc5IZmzK1A6\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create new user (ADMIN PANEL API)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVlMzFkNDczOTRkZGMyMWYyYzg0NWU1NSIsInVzZXJfdHlwZSI6ImFkbWluIiwibmFtZSI6IkFkbWluIiwiZW1haWwiOiJhZG1pbkBjaWNvLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJFBETjJldEI3SGxIVUYxU2c2Q29LTS5YcjhhWlB0R2xySS5JU2F6WDNWQTlhZHFHbk5IamdXIiwiX192IjowfSwiaWF0IjoxNTgwMzI0NTg3fQ.x-hBtHjWw11sP5eSfAQMSHFvKRkftwMtcRkFRGXE4p8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"abc\",\n\t\"email\":\"abc@cico.com\",\n\t\"password\":\"abc\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/v1/user/new",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"user",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Project (Admin Panel API)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/v1/project/addProjects",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"project",
+						"addProjects"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add New Project (success) ",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/project/addProjects",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"project",
+								"addProjects"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "135"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"87-HKdMSyPAXBpQ4pYJA7XJsyRcMxc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Jan 2020 00:52:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"project\": {\n        \"projectlist\": [\n            \"K1 2501\",\n            \"SPEC\",\n            \"Total Oil\",\n            \"C & D Building\"\n        ],\n        \"_id\": \"5e3228be0d3d8f195855819b\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get list of projects",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVlMzFkOGZiODE3NjI2MGJjY2U3MTNmNiIsInVzZXJfdHlwZSI6InVzZXIiLCJuYW1lIjoiYWJjIiwiZW1haWwiOiJhYmNAY2ljby5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRkTzYwYlQ3RmNJSERMcmdoTnZISzJPMzY0TldBQmRONm9wSmlnMHRoM0dVYzVJWm16SzFBNiIsIl9fdiI6MH0sImlhdCI6MTU4MDM0NTgxOX0.8yG7kmQfvTXVt4m_pXDjvC9jYIJt3CRX4_mFJUZnwMw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "34.244.117.88:5000/v1/project",
+					"host": [
+						"34",
+						"244",
+						"117",
+						"88"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"project"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get list of projects (success)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/project",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"project"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "82"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"52-sGgd++Flfk+BA0fbN2o3woG7+9M\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Jan 2020 01:00:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"projectlist\": [\n        \"K1 2501\",\n        \"SPEC\",\n        \"Total Oil\",\n        \"C & D Building\"\n    ],\n    \"status\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "CheckIn into a project",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVlMzFkOGZiODE3NjI2MGJjY2U3MTNmNiIsInVzZXJfdHlwZSI6InVzZXIiLCJuYW1lIjoiYWJjIiwiZW1haWwiOiJhYmNAY2ljby5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRkTzYwYlQ3RmNJSERMcmdoTnZISzJPMzY0TldBQmRONm9wSmlnMHRoM0dVYzVJWm16SzFBNiIsIl9fdiI6MH0sImlhdCI6MTU4MDM0NTgxOX0.8yG7kmQfvTXVt4m_pXDjvC9jYIJt3CRX4_mFJUZnwMw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"project\":\"K1 2501\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "34.244.117.88:5000/v1/checkIn/",
+					"host": [
+						"34",
+						"244",
+						"117",
+						"88"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"checkIn",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CheckIn into a project (success)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"project\":\"K1 2501\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/checkIn/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"checkIn",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "184"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b8-ws30n3YZSeI7c4rqBYA9dJUHzM4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Jan 2020 01:04:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"message\": \"success\",\n    \"data\": {\n        \"_id\": \"5e322b93a9bb4620b48e1003\",\n        \"userId\": \"5e31d8fb8176260bcce713f6\",\n        \"project_name\": \"K1 2501\",\n        \"check_in_time\": \"2020-01-30T01:04:19.662Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "CheckOut of a project",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVlMzFkOGZiODE3NjI2MGJjY2U3MTNmNiIsInVzZXJfdHlwZSI6InVzZXIiLCJuYW1lIjoiYWJjIiwiZW1haWwiOiJhYmNAY2ljby5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRkTzYwYlQ3RmNJSERMcmdoTnZISzJPMzY0TldBQmRONm9wSmlnMHRoM0dVYzVJWm16SzFBNiIsIl9fdiI6MH0sImlhdCI6MTU4MDM0NTgxOX0.8yG7kmQfvTXVt4m_pXDjvC9jYIJt3CRX4_mFJUZnwMw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "34.244.117.88:5000/v1/checkIn?id=5e41280b4281dc19855a2224",
+					"host": [
+						"34",
+						"244",
+						"117",
+						"88"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"checkIn"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5e41280b4281dc19855a2224"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CheckOut of a project (success)",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/checkIn?id=5e322b93a9bb4620b48e1003",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"checkIn"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5e322b93a9bb4620b48e1003"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "218"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"da-pmnmrseoVIOfeLcAawRoF6ssg08\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Jan 2020 01:07:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"_id\": \"5e322b93a9bb4620b48e1003\",\n        \"userId\": \"5e31d8fb8176260bcce713f6\",\n        \"project_name\": \"K1 2501\",\n        \"check_in_time\": \"2020-01-30T01:04:19.662Z\",\n        \"__v\": 0,\n        \"check_out_time\": \"2020-01-30T01:06:54.695Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get user's check in/out history",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVlMzFkOGZiODE3NjI2MGJjY2U3MTNmNiIsInVzZXJfdHlwZSI6InVzZXIiLCJuYW1lIjoiYWJjIiwiZW1haWwiOiJhYmNAY2ljby5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRkTzYwYlQ3RmNJSERMcmdoTnZISzJPMzY0TldBQmRONm9wSmlnMHRoM0dVYzVJWm16SzFBNiIsIl9fdiI6MH0sImlhdCI6MTU4MDM0NTgxOX0.8yG7kmQfvTXVt4m_pXDjvC9jYIJt3CRX4_mFJUZnwMw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "34.244.117.88:5000/v1/checkIn/listing",
+					"host": [
+						"34",
+						"244",
+						"117",
+						"88"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"checkIn",
+						"listing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Tools Status ( Is it broken?)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVlMzFkOGZiODE3NjI2MGJjY2U3MTNmNiIsInVzZXJfdHlwZSI6InVzZXIiLCJuYW1lIjoiYWJjIiwiZW1haWwiOiJhYmNAY2ljby5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRkTzYwYlQ3RmNJSERMcmdoTnZISzJPMzY0TldBQmRONm9wSmlnMHRoM0dVYzVJWm16SzFBNiIsIl9fdiI6MH0sImlhdCI6MTU4MDM0NTgxOX0.8yG7kmQfvTXVt4m_pXDjvC9jYIJt3CRX4_mFJUZnwMw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"toolName\":\"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "34.244.117.88:5000/v1/tool/status",
+					"host": [
+						"34",
+						"244",
+						"117",
+						"88"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"tool",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Scan Tool QR ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVlMzFkOGZiODE3NjI2MGJjY2U3MTNmNiIsInVzZXJfdHlwZSI6InVzZXIiLCJuYW1lIjoiYWJjIiwiZW1haWwiOiJhYmNAY2ljby5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRkTzYwYlQ3RmNJSERMcmdoTnZISzJPMzY0TldBQmRONm9wSmlnMHRoM0dVYzVJWm16SzFBNiIsIl9fdiI6MH0sImlhdCI6MTU4MDM0NTgxOX0.8yG7kmQfvTXVt4m_pXDjvC9jYIJt3CRX4_mFJUZnwMw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"toolName\":\"asb\",\n\t\"projectName\":\"KP\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "34.244.117.88:5000/v1/tool/take",
+					"host": [
+						"34",
+						"244",
+						"117",
+						"88"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"tool",
+						"take"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Report Broken tool",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVlMzFkOGZiODE3NjI2MGJjY2U3MTNmNiIsInVzZXJfdHlwZSI6InVzZXIiLCJuYW1lIjoiYWJjIiwiZW1haWwiOiJhYmNAY2ljby5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRkTzYwYlQ3RmNJSERMcmdoTnZISzJPMzY0TldBQmRONm9wSmlnMHRoM0dVYzVJWm16SzFBNiIsIl9fdiI6MH0sImlhdCI6MTU4MDM0NTgxOX0.8yG7kmQfvTXVt4m_pXDjvC9jYIJt3CRX4_mFJUZnwMw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"toolName\":\"asb\",\n\t\"description\": \"lorem epsum\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "34.244.117.88:5000/v1/tool/report",
+					"host": [
+						"34",
+						"244",
+						"117",
+						"88"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"tool",
+						"report"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

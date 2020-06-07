@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dashboard</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h1> Welcome, user
+        </h1>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="this.apiService.user_data_get().offlineData.checkInStatus == true">
+      You check in for project&nbsp; <b>{{this.selectedProject}}</b>&nbsp; on
+      {{this.apiService.user_data_get().offlineData.checkInData.checkintime | date:'MM/dd/yy h:mm:ss a'}}
+    </ion-row>
+    <ion-row class="project_select">
+      <ion-col>
+        <ion-item>
+          <ion-label>Select project:</ion-label>
+          <ion-select multiple="false" [disabled]="this.apiService.user_data_get().offlineData.checkInStatus"
+            [(ngModel)]="selectedProject" (ionChange)="showSelectValue(selectedProject)">
+            <ng-container *ngFor="let project of projectlist">
+              <ion-select-option>{{project}}</ion-select-option>
+            </ng-container>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <ion-button *ngIf="this.apiService.user_data_get().offlineData.checkInStatus == false" color="primary"
+          (click)="checkIn()">Check In</ion-button>
+        <ion-button *ngIf="this.apiService.user_data_get().offlineData.checkInStatus == true" color="primary"
+          (click)="checkOut()">Check Out</ion-button>
+      </ion-col>
+      <ion-col>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button class="qrbutton" (click)="scanQR()">Scan QR</ion-button>
+  </ion-toolbar>
+</ion-footer>

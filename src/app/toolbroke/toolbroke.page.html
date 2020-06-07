@@ -1,0 +1,36 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="home"></ion-back-button>
+  </ion-buttons>
+  <ion-title>Broke Records</ion-title>
+</ion-toolbar>
+
+<ion-content>
+  <ion-grid class="projectinput">
+    <ion-row>
+      <ion-col>
+        <h1> Enter Tool Details
+        </h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-item class="projectinput">
+        <ion-label position="stacked">How it broke?</ion-label>
+        <ion-textarea value="" [(ngModel)]="description">
+        </ion-textarea>
+      </ion-item>
+
+    </ion-row>
+    <ion-row>
+      <ion-col>
+
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" (click)="toolbroke()">Scan QR</ion-button>
+      </ion-col>
+      <ion-col>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
